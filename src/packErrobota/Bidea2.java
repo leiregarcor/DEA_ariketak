@@ -1,12 +1,12 @@
 package packErrobota;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-
-public class Bidea {
+public class Bidea2 {
     Node first;
 
-    public Bidea() {
+    public Bidea2() {
         first = null;
     }
 
@@ -21,17 +21,20 @@ public class Bidea {
         Node unekoa= first;
         ema.gehitu(unekoa.koord);
         System.out.println("Hasierako koordenatua: " + unekoa.koord);
-        for (int i=0; i< ekintzak.size(); i++){
-            if ( ekintzak.get(i).equals("left") ){
+        Iterator<String> itr = ekintzak.iterator();
+        String ek="";
+        while (itr.hasNext()){
+            ek=itr.next();
+            if (ek.equals("left") ){
                 unekoa = unekoa.left;
             }
-            else if (ekintzak.get(i).equals("right")) {
+            else if (ek.equals("right")) {
                 unekoa = unekoa.right;
             }
-            else if (ekintzak.get(i).equals("next")){
+            else if (ek.equals("next")){
                 unekoa= unekoa.next;
             }
-            System.out.println("Hartutako bidea: " + ekintzak.get(i) + " bere koordenatua: " + unekoa.koord);
+            System.out.println("Hartutako bidea: " + ek + " bere koordenatua: " + unekoa.koord);
             ema.gehitu(unekoa.koord);
         }
 
@@ -39,7 +42,7 @@ public class Bidea {
     }
 
     public static void main(String[] args) {
-        Bidea b = new Bidea();
+        Bidea2 b = new Bidea2();
 
         Node bat = new Node();
         Node bi = new Node();
@@ -90,7 +93,3 @@ public class Bidea {
         b.lortuKoordenatuak(ekintzak);
     }
 }
-
-
-
-
