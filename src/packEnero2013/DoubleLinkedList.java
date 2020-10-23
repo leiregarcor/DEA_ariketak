@@ -16,7 +16,7 @@ public class DoubleLinkedList<T> {
 			kont=0;
 			
 			
-			while(kont<salto) { //empieza en la posicion 0 que se cuenta
+			while(kont<salto-1) { //empieza en la posicion 0 que se cuenta
 				unekoa=unekoa.next;
 				kont ++;
 			}
@@ -37,13 +37,13 @@ public class DoubleLinkedList<T> {
 	}
 	
 	public static void main(String[] args) {
-		DoubleLinkedList d= new DoubleLinkedList();
+		DoubleLinkedList<String> d= new DoubleLinkedList<String>();
 		
-		DoubleNode ana= new DoubleNode();
-		DoubleNode jon= new DoubleNode();
-		DoubleNode amaia= new DoubleNode();
-		DoubleNode luis= new DoubleNode();
-		DoubleNode ander= new DoubleNode();
+		DoubleNode<String> ana= new DoubleNode<String>();
+		DoubleNode<String> jon= new DoubleNode<String>();
+		DoubleNode<String> amaia= new DoubleNode<String>();
+		DoubleNode<String> luis= new DoubleNode<String>();
+		DoubleNode<String> ander= new DoubleNode<String>();
 		
 		ana.data= "Ana";
 		ana.next= jon;
