@@ -70,5 +70,6 @@ public class DoubleLinkedList<T> {
 		Object ema=d.obtenerSupervivientes(4);
 		System.out.println(ema);
 		
+		
 	}
 }
