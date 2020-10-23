@@ -15,6 +15,7 @@ public class DoubleLinkedList<T> {
 		while(unekoa!=unekoa.next) {
 			kont=0;
 			
+			
 			while(kont<salto) { //empieza en la posicion 0 que se cuenta
 				unekoa=unekoa.next;
 				kont ++;

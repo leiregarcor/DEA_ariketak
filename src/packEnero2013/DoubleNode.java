@@ -5,6 +5,7 @@ public class DoubleNode<T> {
 	 DoubleNode<T> next;
 	 DoubleNode<T> prev;
 	 
+	 
 	 public DoubleNode() { //eraikitzailea
 		 next= null;
 		 prev=null;
