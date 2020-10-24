@@ -2,17 +2,27 @@ package packPaisesYCiudades;
 
 public class Pais {
     String nom;
-    Ciudad capi, prime;
+    Ciudad capi, first;
     Pais next;
 
-    public Pais(String pNom, Ciudad pCapi, Ciudad pPrime, Pais pNext) {
+    //eriakitzailea
+    public Pais(String pNom, Ciudad pCapi, Ciudad pFirst) {
         this.nom = pNom;
         this.capi = pCapi;
-        this.prime = pPrime;
-        this.next = pNext;
+        this.first = pFirst;
+        this.next = null;
     }
 
-    //eriakitzailea
+    public void imprimirPais(){
+        System.out.println("/// CIUDAD ///: " + nom );
+        Ciudad unekoa=first;
+        System.out.println(" CAPITAL: " + capi );
+        while(unekoa.next!=null){
+            unekoa.imprimirCiudad();
+            unekoa=unekoa.next;
+        }
+    }
+
 
 
 }

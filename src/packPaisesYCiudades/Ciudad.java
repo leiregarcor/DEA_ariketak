@@ -5,9 +5,17 @@ public class Ciudad {
     int hab;
     Ciudad next;
 
-    public Ciudad(String pNom, int pHab, Ciudad pNext) {
+    //eriakitzailea
+    public Ciudad(String pNom, int pHab) {
         this.nom = pNom;
         this.hab = pHab;
-        this.next = pNext;
+        this.next = null;
     }
+
+    public void imprimirCiudad(){
+        System.out.println(" CIUDAD: "+ nom + " NUM HABITANTES: ");
+    }
+
+
+
 }
