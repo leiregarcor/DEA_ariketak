@@ -18,6 +18,8 @@ public class Mapa {
         Ciudad cUnekoa=null;
         Ciudad cAurrekoa= null;
 
+        while (pUnekoa.next != )
+
     }
 
 }

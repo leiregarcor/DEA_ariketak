@@ -3,11 +3,11 @@ package packPaisesYCiudades;
 public class Ciudad {
     String nom;
     int hab;
-    Ciudad sig;
+    Ciudad next;
 
-    public Ciudad(String pNom, int pHab, Ciudad pSig) {
+    public Ciudad(String pNom, int pHab, Ciudad pNext) {
         this.nom = pNom;
         this.hab = pHab;
-        this.sig = pSig;
+        this.next = pNext;
     }
 }
