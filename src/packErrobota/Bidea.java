@@ -38,6 +38,7 @@ public class Bidea {
         return ema;
     }
 
+
     public static void main(String[] args) {
         Bidea b = new Bidea();
 
