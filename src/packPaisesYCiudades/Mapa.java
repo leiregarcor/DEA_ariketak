@@ -6,8 +6,7 @@ public class Mapa {
     public void eliminaCiudadesQueNoSuperanNHabitantes(Mapa pM, int pN){
        /*       pre: el mapa tiene almenos un elemento.
         *
-        *       post: elimina todas las ciudades escepto las capitales que no superen
-        *       N miles de habitantes.
+        *       post: elimina todas las ciudades (las capitales no) que no superen N miles de habitantes.
         *       Si l acapital de un pais no figurara en la lista de ciudades,
         *       el puntero correspondiente tendrá valor null
         *       Si un pais se quedara sin ciudades debería ser eliminado del mapa.
@@ -18,7 +17,7 @@ public class Mapa {
         Ciudad cUnekoa=null;
         Ciudad cAurrekoa= null;
 
-        while (pUnekoa.next != )
+        while (pUnekoa.next != null)
 
     }
 
