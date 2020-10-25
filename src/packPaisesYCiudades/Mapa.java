@@ -16,33 +16,31 @@ public class Mapa {
         Ciudad cUnekoa=null;
         Ciudad cAurrekoa= null;
 
-        while (pUnekoa.next != null){//para recorrer la lista de paises
+        while (pUnekoa != null){//para recorrer la lista de paises
             cUnekoa=pUnekoa.first;
-            while (cUnekoa.next!=null){//para recorrer las ciudades de cada pais
-                if (cUnekoa!=pUnekoa.capi) {//se eliminará la ciudad si no es una capital
-                    if (cUnekoa.hab < pN) {//si los paises no superan N miles de habitantes serán eliminadas
-                        if (cUnekoa == pUnekoa.first) {//si es la primera ciudad del pais
-                            first = first.next;
-                            cUnekoa = cUnekoa.next;
-                        } else {//si una ciudad que no es la primera del pais
-                            cAurrekoa.next = cUnekoa.next;
-                            cUnekoa = cUnekoa.next;
-                        }
-                    }
-                    else {//actualizar punteros para la siguiente iteración
-                        cAurrekoa = cUnekoa;
+            cAurrekoa= null;
+            while (cUnekoa!=null){//para recorrer las ciudades de cada pais
+                if (cUnekoa!=pUnekoa.capi && cUnekoa.hab < pN) {//se eliminará la ciudad si no es una capital y los paises no superan N miles de habitantes
+
+                    if (cUnekoa == pUnekoa.first) {//si es la primera ciudad del pais
+                        pUnekoa.first = cUnekoa.next;
+                        cUnekoa = cUnekoa.next;
+                    } else {//si una ciudad que no es la primera del pais
+                        cAurrekoa.next = cUnekoa.next;
                         cUnekoa = cUnekoa.next;
                     }
                 }
-                else{//actualizar punteros para la siguiente iteración
-                    cAurrekoa = cUnekoa;
-                    cUnekoa = cUnekoa.next;
+                else {//actualizar punteros para la siguiente iteración
+                      cAurrekoa = cUnekoa;
+                      cUnekoa = cUnekoa.next;
                 }
+
+
             }//fin while ciudades
 
             if (pUnekoa.first==null){     //si un pais no tiene ciudades se eliminará del mapa
                 if (pM.first==pUnekoa){   //si el primer país del mapa es el que no tiene ciudades
-                    first= first.next;
+                    pM.first= pUnekoa.next;
                     pUnekoa=pUnekoa.next;
                 }
                 else{  //si un pais, q no es el primero, no tiene ciudades
