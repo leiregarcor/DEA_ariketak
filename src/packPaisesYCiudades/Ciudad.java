@@ -12,8 +12,12 @@ public class Ciudad {
         this.next = null;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
     public void imprimirCiudad(){
-        System.out.println(" CIUDAD: "+ nom + " NUM HABITANTES: ");
+        System.out.println(" CIUDAD: "+ this.nom + " NUM HABITANTES: " + this.hab);
     }
 
 

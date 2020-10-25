@@ -14,12 +14,17 @@ public class Pais {
     }
 
     public void imprimirPais(){
-        System.out.println("/// CIUDAD ///: " + nom );
+        System.out.println("/// PAIS ///: " + this.nom );
         Ciudad unekoa=first;
-        System.out.println(" CAPITAL: " + capi );
-        while(unekoa.next!=null){
+        if(unekoa!=null){ //si hay elementos en la lista
+            if (this.capi!=null) {
+                System.out.println(" CAPITAL: " + this.capi.getNom());
+            }
+            while(unekoa.next!=null){
+                unekoa.imprimirCiudad();
+                unekoa=unekoa.next;
+            }
             unekoa.imprimirCiudad();
-            unekoa=unekoa.next;
         }
     }
 
