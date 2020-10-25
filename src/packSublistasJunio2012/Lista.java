@@ -25,9 +25,8 @@ public class Lista {
                 lag1= lag1.next;
             }
         }
-        if (lag1 != null && lag2 == null) {/**
-         * si l2 es hutsa y l1 no lo es o si l2 es hutsa y l1 no lo es
-         **/
+        if (lag1 != null && lag2 == null) {
+          // si l2 es hutsa y l1 no lo es
             ema= false;
         }
         System.out.println(ema);
