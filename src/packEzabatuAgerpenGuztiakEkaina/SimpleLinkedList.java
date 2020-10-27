@@ -5,27 +5,26 @@ public class SimpleLinkedList<T> {
     Node<T> first;
     public void ezabatuGuztiak(T elem) {
         // Post: “elem” balioaren berdinak diren elementuak kendu dira zerrendatik
-        Node<Integer> uneko= (Node<Integer>) this.first;
-        Node<Integer> aurr=null;
+        Node<T> uneko= this.first;
+        Node<T> aurr=null;
         while (uneko !=null){
             if (uneko.data.equals(elem)){
             //ezabatu nahi dugun elemtua bada
+                //actualizamos punteros
                 if (uneko==first){
                 //lehenengo elemntua bada
                     first=first.next;
-                    uneko=uneko.next;//actualizamos punteros
                 }
                 else{
                 //ez bada zerrendako lehenengo elementua
                     aurr.next = uneko.next;
-                    uneko=uneko.next;//actualizamos punteros
                 }
             }
             else{
                 //no coinciden y actualizamos punteros
                 aurr=uneko;
-                uneko= uneko.next;
             }
+            uneko=uneko.next;//actualizamos punteros
         }
     }
 
@@ -52,7 +51,7 @@ public class SimpleLinkedList<T> {
     }
 
     public static void main(String[] args) {
-        /** PROBA KASUAK
+        /* PROBA KASUAK
          *   l        elem      ema
          *   ----------------------
          *   ()        5         ()         1.
