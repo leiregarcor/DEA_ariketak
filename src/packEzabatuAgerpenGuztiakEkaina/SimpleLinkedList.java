@@ -1,7 +1,5 @@
 package packEzabatuAgerpenGuztiakEkaina;
 
-import packPaisesYCiudades.Pais;
-
 public class SimpleLinkedList<T> {
 
     Node<T> first;
@@ -44,7 +42,7 @@ public class SimpleLinkedList<T> {
         System.out.println("");
         System.out.println("Lista: "+pLista);
         System.out.println("-------------");
-        Node<Integer> unekoa= (Node<Integer>) first;
+        Node<T> unekoa=  this.first;
         if (first==null){System.out.println("lista hutsa da");}
         while(unekoa!=null){
             System.out.println(unekoa.data );
@@ -65,20 +63,20 @@ public class SimpleLinkedList<T> {
          *             8         (4 5)      4.
          *             5         (4 8)
         */
-        SimpleLinkedList<Integer> l1 = new SimpleLinkedList<Integer>();
-        SimpleLinkedList<Integer> l2 = new SimpleLinkedList<Integer>();
-        SimpleLinkedList<Integer> l3 = new SimpleLinkedList<Integer>();
-        SimpleLinkedList<Integer> l4 = new SimpleLinkedList<Integer>();
+        SimpleLinkedList<Integer> l1 = new SimpleLinkedList<>();
+        SimpleLinkedList<Integer> l2 = new SimpleLinkedList<>();
+        SimpleLinkedList<Integer> l3 = new SimpleLinkedList<>();
+        SimpleLinkedList<Integer> l4 = new SimpleLinkedList<>();
 
-        Node<Integer> n1= new Node<Integer>(5);
+        Node<Integer> n1= new Node<>(5);
 
-        Node<Integer> n2= new Node<Integer>(4);
-        Node<Integer> n3= new Node<Integer>(8);
-        Node<Integer> n4= new Node<Integer>(5);
+        Node<Integer> n2= new Node<>(4);
+        Node<Integer> n3= new Node<>(8);
+        Node<Integer> n4= new Node<>(5);
 
-        Node<Integer> n5= new Node<Integer>(5);
-        Node<Integer> n6= new Node<Integer>(5);
-        Node<Integer> n7= new Node<Integer>(5);
+        Node<Integer> n5= new Node<>(5);
+        Node<Integer> n6= new Node<>(5);
+        Node<Integer> n7= new Node<>(5);
 
         l1.first=null;
 
