@@ -1,4 +1,4 @@
-package azt;
+package packPoker;
 
 public class Pago {
 	int pagador;

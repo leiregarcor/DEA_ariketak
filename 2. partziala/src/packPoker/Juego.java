@@ -1,4 +1,4 @@
-package azt;
+package packPoker;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -6,12 +6,12 @@ import java.util.Stack;
 public class Juego {
 	
 	public int jokatu(int jokKopurua, int billeteak, ArrayList<Pago> ordainketak) {
-		// Precondición:  2 <=  nJugadores <= 20
+		// Precondiciï¿½n:  2 <=  nJugadores <= 20
 		//                nBilletesInicial >= 1
-		//                Todos los pagos de la lista “pagos” son correctos,
+		//                Todos los pagos de la lista ï¿½pagosï¿½ son correctos,
 		//                 es decir, un jugador siempre tiene los billetes 
 		//                 necesarios para realizar sus pagos 
-		// Postcondición: el resultado es el número de billetes verdaderos 
+		// Postcondiciï¿½n: el resultado es el nï¿½mero de billetes verdaderos 
 		//                 del jugador 0 al acabar la partida
 
 		
