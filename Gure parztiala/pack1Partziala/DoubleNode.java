@@ -1,4 +1,4 @@
-// EGILEA: MARTIN AMEZOLA
+package pack1Partziala;// EGILEA: MARTIN AMEZOLA
 // 2020 AZTERKETA LEHEN PARTZIALA LISTAK
 
 public class DoubleNode<T> {
