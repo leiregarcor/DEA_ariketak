@@ -16,7 +16,7 @@ public class OrdenaciónPorRaizString {
         int kont=0;
         for (int k=0; k<maxLetras; k++){
             for (String s:a){
-                ilara[posChar(s.charAt(k))].add(s);
+                ilara[posChar(s.charAt(maxLetras-1-k))].add(s);
             }
             kont=0;
             for (int j=0; j< ilara.length; j++){
