@@ -114,14 +114,15 @@ public class RadixSortS {
             }
         }
         public static void main(String[] args) {
+            System.out.println(" ");
             System.out.println("Aitor y Leire");
+            System.out.println(" ");
             RadixSortS r= new RadixSortS();
             String[]s= {"aye","yea","aya","yay","eda","aca","bea","cae"};
             System.out.println("Lista ordenatu gabe");
-            System.out.println(s);
             r.printEma(s);
+            System.out.println(" ");
             System.out.println("Lista ordenatuta");
-            System.out.println(s);
             r.ordRaiz(s,3);
         }
 
