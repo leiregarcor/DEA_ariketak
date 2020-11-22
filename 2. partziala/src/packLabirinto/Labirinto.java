@@ -24,6 +24,24 @@ public class Labirinto {
         public int getZ(){
             return this.z;
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj)
+                return true;
+            if (obj == null)
+                return false;
+            if (getClass() != obj.getClass())
+                return false;
+            Lauki other = (Lauki) obj;
+            if (x != other.x)
+                return false;
+            if (y != other.y)
+                return false;
+            if (z != other.z)
+                return false;
+            return true;
+        }
     }
 
     private char [][][] labirinto = {
@@ -54,9 +72,9 @@ public class Labirinto {
         Stack<Lauki> aztGabeak = new Stack<>();
         aztGabeak.push(hasiera);
         boolean [][][] aztertuak = new boolean[labirinto.length][labirinto[0].length][labirinto[0][0].length];
-        for (int k = 0; k < aztertuak.length; k++) {
-            for (int l=0; l<aztertuak[0].length; l++){
-                for (int n=0; n<aztertuak[0][0].length; n++){
+        for (int k = 0; k < aztertuak.length-1; k++) {
+            for (int l=0; l<aztertuak[0].length-1; l++){
+                for (int n=0; n<aztertuak[0][0].length-1; n++){
                     aztertuak[k][l][n]=false;
                 }
             }
