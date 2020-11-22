@@ -114,6 +114,7 @@ public class OrdenaciónPorRaizString {
         }
     }
     public static void main(String[] args) {
+        System.out.println("Aitor y Leire");
         OrdenaciónPorRaizString r = new OrdenaciónPorRaizString();
         String[]s= {"aye","yea","aya","yay","eda","aca","bea","cae"};
         System.out.println("Lista ordenatu gabe");
