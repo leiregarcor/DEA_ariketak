@@ -14,9 +14,9 @@ public class OrdenaciónPorRaizString {
             ilara[i]=new LinkedList<>();
         }
         int kont=0;
-        for (int i=0; i<maxLetras; i++){
+        for (int k=0; k<maxLetras; k++){
             for (String s:a){
-                ilara[posChar(s.charAt(i))].add(s);
+                ilara[posChar(s.charAt(k))].add(s);
             }
             kont=0;
             for (int j=0; j< ilara.length; j++){
@@ -113,13 +113,13 @@ public class OrdenaciónPorRaizString {
             return 25;
         }
     }
-
     public static void main(String[] args) {
-        OrdenaciónPorRaizString r= new OrdenaciónPorRaizString();
+        OrdenaciónPorRaizString r = new OrdenaciónPorRaizString();
         String[]s= {"aye","yea","aya","yay","eda","aca","bea","cae"};
         System.out.println("Lista ordenatu gabe");
         r.printEma(s);
         System.out.println("Lista ordenatuta");
         r.ordRaiz(s,3);
     }
+
 }
