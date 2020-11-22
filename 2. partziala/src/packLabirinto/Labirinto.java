@@ -72,7 +72,7 @@ public class Labirinto {
         Stack<Lauki> aztGabeak = new Stack<>();
         aztGabeak.push(hasiera);
         boolean [][][] aztertuak = new boolean[labirinto.length][labirinto[0].length][labirinto[0][0].length];
-        for (int k = 0; k < aztertuak.length-1; k++) {s
+        for (int k = 0; k < aztertuak.length-1; k++) {
             for (int l=0; l<aztertuak[0].length-1; l++){
                 for (int n=0; n<aztertuak[0][0].length-1; n++){
                     aztertuak[k][l][n]=false;
