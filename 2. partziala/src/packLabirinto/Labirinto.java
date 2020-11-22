@@ -1,11 +1,29 @@
 package packLabirinto;
 
+import java.util.Stack;
+
 public class Labirinto {
 
     public class Lauki{
         int x;
         int y;
-        int Z;
+        int z;
+
+
+        public Lauki(int x, int y, int z) {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+        public int getX(){
+            return this.x;
+        }
+        public int getY(){
+            return this.y;
+        }
+        public int getZ(){
+            return this.z;
+        }
     }
 
     private char [][][] labirinto = {
@@ -25,12 +43,104 @@ public class Labirinto {
 
         //labirinto [x][y][z]== '_' , lauki hori pasiloa da.
         //labirinto [x][y][z]== 'X' , lauki hori horma da.
+
     public boolean bideaDago(){
         //post: emaitza true da bide bat baldin badadgo hasierako laukitik ([0,0,0]laukia) eskuineko
         //        beheko laukira, false bestela.
         //Lauki bat emanda, 6 mugimendu egin daitezke: aurrera, atzera, gora, behera, ezkerrera edo eskuinera.
-        boolean ema= false;
+        boolean aurk= false;
+        Lauki hasiera= new Lauki(0,0,0);
+        Lauki helburua= new Lauki(labirinto.length-1, labirinto[0].length-1,labirinto[0][0].length-1);
+        Stack<Lauki> aztGabeak = new Stack<>();
+        aztGabeak.push(hasiera);
+        boolean [][][] aztertuak = new boolean[labirinto.length][labirinto[0].length][labirinto[0][0].length];
+        for (int k = 0; k < aztertuak.length; k++) {
+            for (int l=0; l<aztertuak[0].length; l++){
+                for (int n=0; n<aztertuak[0][0].length; n++){
+                    aztertuak[k][l][n]=false;
+                }
+            }
+        }
+        aztertuak[0][0][0]= true;
 
+        while (!aztGabeak.isEmpty() && !aurk){
+            Lauki unekoa = aztGabeak.pop();
+            if (unekoa.equals(helburua)){
+                aurk = true;
+            }
+            else{
+                //kasu 1
+                int x = unekoa.getX()-1;
+                int y = unekoa.getY();
+                int z = unekoa.getZ();
+                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
+                    aztGabeak.push(new Lauki(x, y , z));
+                    aztertuak[x][y][z]=true;
+                }
+                //kasu 2
+                x = unekoa.getX()+1;
+                y = unekoa.getY();
+                z = unekoa.getZ();
+                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
+                    aztGabeak.push(new Lauki(x, y , z));
+                    aztertuak[x][y][z]=true;
+                }
+                //kasu 3
+                x = unekoa.getX();
+                y = unekoa.getY()-1;
+                z = unekoa.getZ();
+                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
+                    aztGabeak.push(new Lauki(x, y , z));
+                    aztertuak[x][y][z]=true;
+                }
+                //kasu 4
+                x = unekoa.getX();
+                y = unekoa.getY()+1;
+                z = unekoa.getZ();
+                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
+                    aztGabeak.push(new Lauki(x, y , z));
+                    aztertuak[x][y][z]=true;
+                }
+                //kasu 5
+                x = unekoa.getX();
+                y = unekoa.getY();
+                z = unekoa.getZ()-1;
+                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
+                    aztGabeak.push(new Lauki(x, y , z));
+                    aztertuak[x][y][z]=true;
+                }
+                //kasu 6
+                x = unekoa.getX();
+                y = unekoa.getY();
+                z = unekoa.getZ()+1;
+                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
+                    aztGabeak.push(new Lauki(x, y , z));
+                    aztertuak[x][y][z]=true;
+                }
+            }
+        }
+
+        return aurk;
+    }
+
+    public boolean barruan(int x, int y, int z){
+        boolean ema= true;
+        if (x<0 || y<0 || z<0){
+            ema=false;
+        }
+        if(labirinto.length<x || labirinto[0].length<y || labirinto[0][0].length<z ){
+            ema=false;
+        }
         return ema;
+    }
+
+    public static void main(String[] args) {
+        Labirinto l = new Labirinto();
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" main");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(l.bideaDago());
     }
 }
