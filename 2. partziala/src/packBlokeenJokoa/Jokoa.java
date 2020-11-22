@@ -67,7 +67,7 @@ public class Jokoa {
         while (!bukaera ){
             b= taula[pos].pop();
             ema = ema + b.puntuak;
-            if (b.norabidea.equals('i')){
+            if (b.norabidea.equals("i")){
                 pos=pos - b.jauzia;
             }
             else{
