@@ -49,6 +49,7 @@ public class Jokoa {
         taula[3].push(b1); //d2
 
         taula[5].push(b); //d3
+        b1= new Bloke(5,2,"i");
         taula[5].push(b1); //d2
         b1= new Bloke(5,3,"i");
         taula[5].push(b1); //i3
