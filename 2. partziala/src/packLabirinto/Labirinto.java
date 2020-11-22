@@ -128,7 +128,7 @@ public class Labirinto {
         if (x<0 || y<0 || z<0){
             ema=false;
         }
-        if(labirinto.length<x || labirinto[0].length<y || labirinto[0][0].length<z ){
+        if(labirinto.length-1<x || labirinto[0].length-1<y || labirinto[0][0].length-1<z ){
             ema=false;
         }
         return ema;
