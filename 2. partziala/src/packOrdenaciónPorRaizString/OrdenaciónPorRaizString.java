@@ -121,6 +121,5 @@ public class OrdenaciónPorRaizString {
         r.printEma(s);
         System.out.println("Lista ordenatuta");
         r.ordRaiz(s,3);
-        r.printEma(s);
     }
 }
