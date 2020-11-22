@@ -10,6 +10,7 @@ public class OrdenaciónPorRaizString {
         //post: a está ordenado ascendentemente
         Queue<String>[]ilara= new LinkedList<String>[26];
     }
-
-
+    private int posChar(char c){
+        if ()gf
+    }
 }
