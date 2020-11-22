@@ -54,7 +54,7 @@ public class Labirinto {
                 {'_','X','_'}
             },
             {   {'_','X','_'},
-                {'_','_','_'},
+                {'_','_','X'},
                 {'_','X','_'}
             }
     };
@@ -88,53 +88,20 @@ public class Labirinto {
             }
             else{
                 //kasu 1
-                int x = unekoa.getX()-1;
+                int x = unekoa.getX();
                 int y = unekoa.getY();
                 int z = unekoa.getZ();
-                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
-                    aztGabeak.push(new Lauki(x, y , z));
-                    aztertuak[x][y][z]=true;
-                }
+                posizioaKonprobatu(x-1,y,z,aztGabeak,aztertuak);
                 //kasu 2
-                x = unekoa.getX()+1;
-                y = unekoa.getY();
-                z = unekoa.getZ();
-                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
-                    aztGabeak.push(new Lauki(x, y , z));
-                    aztertuak[x][y][z]=true;
-                }
+                posizioaKonprobatu(x+1,y,z,aztGabeak,aztertuak);
                 //kasu 3
-                x = unekoa.getX();
-                y = unekoa.getY()-1;
-                z = unekoa.getZ();
-                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
-                    aztGabeak.push(new Lauki(x, y , z));
-                    aztertuak[x][y][z]=true;
-                }
+                posizioaKonprobatu(x,y-1,z,aztGabeak,aztertuak);
                 //kasu 4
-                x = unekoa.getX();
-                y = unekoa.getY()+1;
-                z = unekoa.getZ();
-                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
-                    aztGabeak.push(new Lauki(x, y , z));
-                    aztertuak[x][y][z]=true;
-                }
+                posizioaKonprobatu(x,y+1,z,aztGabeak,aztertuak);
                 //kasu 5
-                x = unekoa.getX();
-                y = unekoa.getY();
-                z = unekoa.getZ()-1;
-                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
-                    aztGabeak.push(new Lauki(x, y , z));
-                    aztertuak[x][y][z]=true;
-                }
+                posizioaKonprobatu(x,y,z-1,aztGabeak,aztertuak);
                 //kasu 6
-                x = unekoa.getX();
-                y = unekoa.getY();
-                z = unekoa.getZ()+1;
-                if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
-                    aztGabeak.push(new Lauki(x, y , z));
-                    aztertuak[x][y][z]=true;
-                }
+                posizioaKonprobatu(x,y,z+1,aztGabeak,aztertuak);
             }
         }
 
@@ -160,5 +127,12 @@ public class Labirinto {
         System.out.println(" ");
         System.out.println(" ");
         System.out.println(l.bideaDago());
+    }
+
+    private void posizioaKonprobatu(int x, int y, int z, Stack<Lauki> aztGabeak, boolean [][][] aztertuak){
+        if(this.barruan(x, y , z) && labirinto[x][y][z]!='X' && !aztertuak[x][y][z] ){
+            aztGabeak.push(new Lauki(x, y , z));
+            aztertuak[x][y][z]=true;
+        }
     }
 }
