@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class RadixSort {
+public class RadixSortMart {
     public void radixSort(Integer[] a, int maxCifras) {
         // Pre: maxCifras indica el número de cifras del elemento mayor de a
 
@@ -88,7 +88,8 @@ public class RadixSort {
         System.out.println(" ");
 
         System.out.println("Eta RadixSort metodoarekin ordenatuz, honakoa daukagu.");
-        new RadixSort().radixSort(a, 3);
+        new RadixSortMart
+                ().radixSort(a, 3);
         for (int i = 0; i < a.length; i++) {
             System.out.print("     " + a[i]);
         }
