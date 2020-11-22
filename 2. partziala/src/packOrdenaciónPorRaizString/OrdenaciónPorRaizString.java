@@ -7,6 +7,6 @@ public class OrdenaciónPorRaizString {
         //post: a está ordenado ascendentemente
     }
     private int posChar(char c){
-        if ()
+        if ()gf
     }
 }
