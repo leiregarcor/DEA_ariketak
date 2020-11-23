@@ -7,9 +7,14 @@ import java.util.Stack;
 
 public class Jokoa {
 
-    public class Jokaldi {
+    public static class Jokaldi {
         int dado1;
         int dado2;
+
+        public Jokaldi(int dado1, int dado2) {
+            this.dado1 = dado1;
+            this.dado2 = dado2;
+        }
     }
 
     Queue<Integer>[] jokalariak = new Queue[6];
@@ -22,6 +27,9 @@ public class Jokoa {
     public Jokoa() {
         for(int i=0; i<jokalariak.length; i++){
             jokalariak[i]= new LinkedList<>();
+            for(int k=0; k<6;k++){
+                jokalariak[i].add(i);
+            }
         }
         this.mahaia = new Stack<>();
     }
@@ -48,7 +56,6 @@ public class Jokoa {
         }
         int oraingoB=0;
         int emaB=0;
-
         for(int i=1; i<jokalariak.length; i++){
             while(!jokalariak[i].isEmpty()){
                 if(jokalariak[i].remove()==0){
@@ -60,10 +67,23 @@ public class Jokoa {
                 ema= i;
             }
         }
+        System.out.println(ema);
         return ema;
     }
 
     public static void main(String[] args) {
+        Jokoa j = new Jokoa();
+        ArrayList<Jokaldi> jokaldiak = new ArrayList<>();
+
+        Jokaldi j0= new Jokaldi(4,1);
+        Jokaldi j1= new Jokaldi(5,3);
+        Jokaldi j2= new Jokaldi(6,1);
+
+        jokaldiak.add(j0);
+        jokaldiak.add(j1);
+        jokaldiak.add(j2);
+
+        j.jokoa(jokaldiak);
 
     }
 }
