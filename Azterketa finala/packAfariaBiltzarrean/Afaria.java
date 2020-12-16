@@ -10,6 +10,7 @@ public class Afaria<T> {
     ArrayList<Integer>[]adjList;
 
     public boolean ahalDaAfaria(){
+        //zabaleran:
         Queue<Integer> aztertuGabeak = new LinkedList<>();
         boolean ondoGoaz = true;
         boolean[] aztertuak = new boolean[numVertices];
