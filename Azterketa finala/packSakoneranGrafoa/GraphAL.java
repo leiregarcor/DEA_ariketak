@@ -1,6 +1,5 @@
 package packSakoneranGrafoa;
 
-import packSakoneranGrafoa.GraphADT;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -19,7 +18,7 @@ public class GraphAL<T> implements GraphADT<T> {
         for (int i = 0; i < DEFAULT_CAPACITY; i++) {
             adjList[i] = new LinkedList<Integer>();
         }
-        ; // lista vacía
+         // lista vacía
         this.vertices = (T[]) (new Object[DEFAULT_CAPACITY]);
     }
 
