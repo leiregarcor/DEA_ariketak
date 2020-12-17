@@ -75,7 +75,7 @@ public class GraphAL<T> implements GraphADT<T> {
         return 0;
     }
 
-    public boolean connected(T a, T b) {
+    public boolean connected(T a, T b) { //ZABALERAN, HAU DA, ILARA BATEKIN
 
         boolean[] marcados = new boolean[numVertices];
         for (int i = 0; i < marcados.length; i++) {
@@ -106,7 +106,7 @@ public class GraphAL<T> implements GraphADT<T> {
         return enc;
     }
 
-    public boolean connectedRec(T a, T b) {
+    public boolean connectedRec(T a, T b) { //SAKONERAN, ERREKURTSIBOKI
 
         boolean[] marcados = new boolean[numVertices];
         for (int i = 0; i < marcados.length; i++) {
@@ -117,15 +117,21 @@ public class GraphAL<T> implements GraphADT<T> {
         return connectedRec(u, v, marcados);
     }
 
-    private boolean connectedRec(int x, int y, boolean[] marcados) {
-
-        // HAU OSATU BEHAR DA!!!!!
-
-
-
-
-
-        return false;
+    private boolean connectedRec(int x, int y, boolean[] marcados) { ////SAKONERAN, ERREKURTSIBOKI
+        if(x==y){ return true;}
+        else {
+            boolean ema= false;
+            marcados[x]=true;
+            for(int xn:adjList[x]){
+                if(!marcados[xn]){
+                    ema= connectedRec(xn, y, marcados);
+                    if(ema){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 
 
