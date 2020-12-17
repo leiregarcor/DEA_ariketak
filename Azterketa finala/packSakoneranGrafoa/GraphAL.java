@@ -1,4 +1,4 @@
-package GraphLewisChaseConnectedMetodoarekin;
+package packSakoneranGrafoa;
 
 import packSakoneranGrafoa.GraphADT;
 
@@ -245,32 +245,21 @@ public class GraphAL<T> implements GraphADT<T> {
         g.addEdge("e", "c");
         g.addEdge("e", "f");
 
-        System.out.println("connected(a, e) deberia dar true:  " +
-                g.connected("a", "e"));
-        System.out.println("connected2(a, e) deberia dar [a, c, d, e]:
-                " + g.connected2("a", "e").toString());
-                System.out.println("connected(d, b) deberia dar true:  " +
-                        g.connected("d", "b"));
-        System.out.println("connected2(d, b) deberia dar [d, e, c, a,
-                b]:  " + g.connected2("d", "b").toString());
-        System.out.println("connected(f, b) deberia dar false: " +
-                g.connected("f", "b"));
-        System.out.println("connected2(f, b) deberia dar []:  " +
-                g.connected2("f", "b").toString());
+        System.out.println("connected(a, e) deberia dar true:  " +  g.connected("a", "e"));
+        System.out.println("connected2(a, e) deberia dar [a, c, d, e]:" + g.connected2("a", "e").toString());
+                System.out.println("connected(d, b) deberia dar true:  " + g.connected("d", "b"));
+        System.out.println("connected2(d, b) deberia dar [d, e, c, a, b]:  " + g.connected2("d", "b").toString());
+        System.out.println("connected(f, b) deberia dar false: " + g.connected("f", "b"));
+        System.out.println("connected2(f, b) deberia dar []:  " + g.connected2("f", "b").toString());
 
-        System.out.println("connectedRec(a, e) deberia dar true:  " +
-                g.connectedRec("a", "e"));
-        System.out.println("connectedRec2(a, e) deberia dar [a, b, c,
-                d, e]:  " + g.connectedRec2("a", "e").toString());
+        System.out.println("connectedRec(a, e) deberia dar true:  " + g.connectedRec("a", "e"));
+        System.out.println("connectedRec2(a, e) deberia dar [a, b, c, d, e]:  " + g.connectedRec2("a", "e").toString());
         System.out.println("connectedRec(d, b) deberia dar true:  " +
                 g.connectedRec("d", "b"));
-        System.out.println("connectedRec2(d, b) deberia dar [d, e, c,
-                a, b]:  " + g.connectedRec2("d", "b").toString());
+        System.out.println("connectedRec2(d, b) deberia dar [d, e, c, a, b]:  " + g.connectedRec2("d", "b").toString());
 
-        System.out.println("connectedRec(f, b) deberia dar false: " +
-                g.connectedRec("f", "b"));
-        System.out.println("connectedRec2(f, b) deberia dar []:  " +
-                g.connectedRec2("f", "b").toString());
+        System.out.println("connectedRec(f, b) deberia dar false: " + g.connectedRec("f", "b"));
+        System.out.println("connectedRec2(f, b) deberia dar []:  " +  g.connectedRec2("f", "b").toString());
 
     }
 }
