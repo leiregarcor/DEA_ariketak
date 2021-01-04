@@ -50,6 +50,35 @@ public class Afaria<T> {
 
     public static void main(String[] args) {
         Afaria a = new Afaria<String>();
+        //vertices sortutzen da eraikitzailean, orain adjList bete behar dugu
+        //"jon", "ana", "kepa", "peio", "luis", "maria"
+        // 0      1        2       3       4       5
+        a.adjList[0]=new ArrayList();
+        a.adjList[0].add(3);
+        a.adjList[0].add(1);
+        a.adjList[0].add(2);
+        a.adjList[0].add(4);
 
+        a.adjList[1]=new ArrayList();
+        a.adjList[1].add(0);
+        a.adjList[1].add(2);
+
+        a.adjList[2]=new ArrayList();
+        a.adjList[2].add(4);
+        a.adjList[2].add(1);
+        a.adjList[2].add(0);
+
+        a.adjList[3]=new ArrayList();
+        a.adjList[3].add(5);
+        a.adjList[3].add(0);
+
+        a.adjList[4]=new ArrayList();
+        a.adjList[4].add(2);
+        a.adjList[4].add(0);
+
+        a.adjList[5]=new ArrayList();
+        a.adjList[5].add(3);
+
+        System.out.println(a.ahalDaAfaria());
     }
 }
