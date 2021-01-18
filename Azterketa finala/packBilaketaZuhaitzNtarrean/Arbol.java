@@ -67,7 +67,7 @@ public class Arbol {
         return esta(elem, root);
     }
 
-    private boolean esta(Integer elem, BinaryTreeNode<Integer> act){
+    private boolean esta(Integer elem, BinaryTreeNode<Integer> act){ //solución de con aitor
         boolean aurkitua=false;
         if(act==null){ }
         else{
@@ -100,6 +100,64 @@ public class Arbol {
         }
         return aurkitua;
     }
+
+ /*   private boolean esta(Integer elem, BinaryTreeNode<Integer> act){
+        if (act == null) return false;
+        else {
+            boolean enc = false;
+            int i = 0;
+            while ((i < act.valores.length) && !enc) {
+                // System.out.println("Valor, i: " + act.valores[i] + " " + i);
+                if (elem <= act.valores[i]) enc = true;
+                else i++;
+            }
+            if (enc && (elem == act.valores[i])) return true;
+            else return esta(elem, act.hijos[i]);
+        }
+    }
+
+    public boolean esta2(Integer elem) { // Solución iterativa 1
+        // post: el resultado es true si “elem” está en el árbol
+        //      y false si no
+        BinaryTreeNode<Integer> act = root;
+        Boolean enc = false;
+        int i = 0;
+        while (!enc && (act != null)) {
+            if (i < act.valores.length)
+                if (elem == act.valores[i]) enc = true;
+                else
+                if (elem < act.valores[i]) { // moverse al subárbol hijo correspondiente
+                    act = act.hijos[i];
+                    i = 0;
+                }
+                else i = i + 1;
+            else { // ir al último subárbol hijo. El valor "elem" es mayor que todos los del array
+                act = act.hijos[i];
+                i = 0;
+            }
+        }
+        return enc;
+    }
+
+    public boolean esta(Integer elem) { // Solución iterativa 2
+        // post: el resultado es true si “elem” está en el árbol
+        //      y false si no
+        BinaryTreeNode<Integer> act = root;
+        Boolean enc = false;
+        while (!enc && (act != null)) {
+            int i = 0;
+            while ((i < act.valores.length) && (elem > act.valores[i]))
+                i = i + 1;
+            if (i == act.valores.length)
+                act = act.hijos[i]; // ir al último subárbol hijo. El valor "elem" es mayor que todos los del array
+            else
+            if (elem == act.valores[i]) enc = true;
+            else
+                // moverse al subárbol hijo correspondiente
+                act = act.hijos[i];
+        }
+        return enc;
+    }*/
 
     public static void main(String[] args){
 
