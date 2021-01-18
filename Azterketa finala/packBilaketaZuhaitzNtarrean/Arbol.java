@@ -68,13 +68,13 @@ public class Arbol {
     }
 
     private boolean esta(Integer elem, BinaryTreeNode<Integer> act){
-        if(act==null){
-            return false;
-        }
+        boolean aurkitua=false;
+        if(act==null){ }
         else{
-            for(int i=0; i<act.valores.length;i++ ){
+            int i = 0;
+            while ( i<act.valores.length && !aurkitua){//for(int i=0; i<act.valores.length;i++ ){
                 if(elem == act.valores[i]){
-                    return true;
+                    aurkitua= true;
                 }
                 else if(elem < act.valores[i]){
                     if(act.hijos==null){
@@ -93,10 +93,12 @@ public class Arbol {
                             return esta(elem,act.hijos[i+1]);
                         }
                     }
+                    i++;
                 }
             }
 
         }
+        return aurkitua;
     }
 
     public static void main(String[] args){
