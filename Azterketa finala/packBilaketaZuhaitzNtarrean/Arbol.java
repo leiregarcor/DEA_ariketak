@@ -101,7 +101,10 @@ public class Arbol {
         return aurkitua;
     }
 
- /*   private boolean esta(Integer elem, BinaryTreeNode<Integer> act){
+ /**
+  * Solucion e koldo
+
+   private boolean esta(Integer elem, BinaryTreeNode<Integer> act){
         if (act == null) return false;
         else {
             boolean enc = false;
