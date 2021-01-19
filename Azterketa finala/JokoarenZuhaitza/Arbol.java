@@ -41,12 +41,52 @@ public class Arbol {
         }
     }
 
-    public void premiar(int puntos, String elem) {
-        premiar(puntos, elem, root);
+    public Nodo bilatuSariduna(String elem, Nodo n){
+        /**
+         * OINARRIZKO KASUAK(ez errekurtsibo):
+         * - n hutsa da
+         * - n elem da
+         **********************
+         * KASU ERREKURTSIBO:
+         * - n ez da elem
+         * */
+        if(n!=null) {
+            if(n.content.s.equals(elem)) {
+                return n;
+            }
+            else{
+                Nodo esk = bilatuSariduna(elem,n.der);
+                Nodo ezk = bilatuSariduna(elem,n.izq);
+                if(esk!=null){
+                    return esk;
+                }
+                if(ezk!=null){
+                    return ezk;
+                }
+            }
+        }
+        return null;
     }
 
-    private void premiar(int puntos, String elem, Nodo n) {
-        // COMPLETAR
+    public void saritu(int puntos, String elem) {
+            saritu(puntos, bilatuSariduna(elem,root));
+    }
+
+    private void saritu(int puntos, Nodo n) {
+        /**
+         * OINARRIZKO KASUAK(ez errekurtsibo):
+         * - n hutsa da
+         * - puntuak 0 direnean
+         **********************
+         * KASU ERREKURTSIBO:
+         * - puntuak geratzen dira eta n ez da null
+         * */
+        if (n==null || puntos == 0){}
+        else{
+            n.content.puntos=n.content.puntos+puntos;
+            saritu(puntos-1,n.padre);
+        }
+
 
     }
 
@@ -81,7 +121,7 @@ public class Arbol {
         Arbol a = new Arbol();
         a.print();
         System.out.println();
-        a.premiar(8, "G");
+        a.saritu(8, "G");
         a.print();
     }
 }
