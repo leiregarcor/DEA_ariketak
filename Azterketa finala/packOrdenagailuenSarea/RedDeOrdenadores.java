@@ -26,8 +26,8 @@ public class RedDeOrdenadores {
      * @return For each i (in the range 0 .. number of nodes in the graph), this method calculates
      * the minimum distance from node 0 to i
      */
-    public int[] obtenerCostes() {
-
+    public int[] obtenerCostes() { //solución con aitor
+        //kostua n^2, n izanik nodo kopurua
 
         int[] costes = new int[adjMatrix[0].length];
         boolean[] visitados = new boolean[adjMatrix[0].length];
@@ -57,6 +57,34 @@ public class RedDeOrdenadores {
         }
         return costes;
     }
+
+   /**koldoren soluzioa
+
+     public int[] obtenerCostes() {
+
+        int[] costes = new int[adjMatrix[0].length];
+         boolean[] visitados = new boolean[adjMatrix[0].length];
+
+         Queue<Integer> porExaminar = new LinkedList<Integer>();
+
+         visitados[0] = true;
+        costes[0] = 0;
+        porExaminar.add(0);
+
+         while (!porExaminar.isEmpty()){
+            Integer x = porExaminar.remove();
+            for (int i = 0; i < costes.length; i++){
+                if ((adjMatrix[x][i]) && (!visitados[i])){
+                    visitados[i] = true;
+                    costes[i] = costes[x] + 1;
+                    porExaminar.add(i);
+                }
+            }
+        }
+     return costes;
+     }
+     */
+
 
     public static void main(String[] args){
         int[] r = new RedDeOrdenadores().obtenerCostes();
