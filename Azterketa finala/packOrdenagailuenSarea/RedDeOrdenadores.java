@@ -33,8 +33,28 @@ public class RedDeOrdenadores {
         boolean[] visitados = new boolean[adjMatrix[0].length];
         Queue<Integer> porExaminar = new LinkedList<Integer>(); //zabaleran errekorritu
 
-        // COMPLETAR
+        for(int k=0; k<visitados.length;k++){
+            visitados[k]=false;
+        }
 
+        porExaminar.add(0);
+        visitados[0]= true;
+        costes[0]=0;
+
+        int uneko=0;
+
+        while(!porExaminar.isEmpty()){
+            uneko= porExaminar.remove();
+            for (int i=0; i<adjMatrix[0].length; i++){
+                if(adjMatrix[uneko][i]){
+                    if(!visitados[i]){
+                        porExaminar.add(i);
+                        visitados[i]= true;
+                        costes[i]=costes[uneko]+1;
+                    }
+                }
+            }
+        }
         return costes;
     }
 
