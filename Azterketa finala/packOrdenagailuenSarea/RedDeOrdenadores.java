@@ -31,8 +31,7 @@ public class RedDeOrdenadores {
 
         int[] costes = new int[adjMatrix[0].length];
         boolean[] visitados = new boolean[adjMatrix[0].length];
-
-        Queue<Integer> porExaminar = new LinkedList<Integer>();
+        Queue<Integer> porExaminar = new LinkedList<Integer>(); //zabaleran errekorritu
 
         // COMPLETAR
 
