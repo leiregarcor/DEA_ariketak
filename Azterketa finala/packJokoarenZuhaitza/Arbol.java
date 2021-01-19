@@ -1,4 +1,4 @@
-package JokoarenZuhaitza;
+package packJokoarenZuhaitza;
 
 public class Arbol {
 
