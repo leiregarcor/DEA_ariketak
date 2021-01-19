@@ -3,6 +3,7 @@ package packRedDeOrdenadores;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
 public class RedDeOrdenadores {
 
 	protected Boolean[][] adjMatrix = {
@@ -48,5 +49,4 @@ public class RedDeOrdenadores {
 		}
 	}
 	
-
 }
