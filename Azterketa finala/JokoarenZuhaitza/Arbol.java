@@ -86,9 +86,40 @@ public class Arbol {
             n.content.puntos=n.content.puntos+puntos;
             saritu(puntos-1,n.padre);
         }
-
+    }
+//hecho por martintxu---------------------------------------------------------
+    public void premiar(int puntos, String elem) {
+        premiar(puntos, elem, root);
 
     }
+
+    private void premiar(int puntos, String elem, Nodo n) {
+        if (n != null)
+        {
+            if (n.content.s.equals(elem))// Aurkitu badugu gure nodoa
+            {
+                n.content.puntos+= puntos;
+                puntos--;
+                Nodo nd = n.padre;
+                if (nd != null)
+                {
+                    while ((puntos > 0)&&(nd !=null))
+                    {
+                        nd.content.puntos += puntos;
+                        nd = nd.padre;
+                        puntos--;
+                    }
+                }
+            }else
+            {
+                premiar(puntos, elem, n.izq);
+                premiar(puntos, elem, n.der);
+            }
+        }
+
+    }
+//hecho por martintxu---------------------------------------------------------
+
 
     private class Info {
         String s;
@@ -123,5 +154,11 @@ public class Arbol {
         System.out.println();
         a.saritu(8, "G");
         a.print();
+
+        //marto
+        Arbol b = new Arbol();
+        System.out.println();
+        b.saritu(8, "G");
+        b.print();
     }
 }
