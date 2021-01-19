@@ -6,12 +6,13 @@ import java.util.Iterator;
 public class Grafo {
 
 	private int numVertices = 5;
-	private boolean[][] adjMatrix = {
-			 {false, true,  true,  false, true},
-		     {true,  false, false, false, false},
-		     {true,  false, false, true,  true},
-		     {false, false, true,  false, true},
-		     {true,  false, true,  true,  false}
+	private boolean[][] adjMatrix = { //[ilara][zutabea]
+	//zutabeak:  0      1     2      3      4	 //ilarak:
+			 {false, true,  true,  false, true}, //0
+		     {true,  false, false, false, false},//1
+		     {true,  false, false, true,  true}, //2
+		     {false, false, true,  false, true}, //3
+		     {true,  false, true,  true,  false} //4
 	};
 	
 	public Grafo(){ 
@@ -24,14 +25,14 @@ public class Grafo {
 		
 		if (lista.isEmpty()) return false;
 		else {
-
+			int ilara = lista.get(0);
 			boolean hayCamino = true;
-                        // COMPLETAR
-
-
-
-
-
+			for(int zutabe=1; zutabe<lista.size(); zutabe++){
+				if (!adjMatrix[ilara][lista.get(zutabe)]){
+					hayCamino=false;
+				}
+				ilara= lista.get(zutabe);
+			}
 			return hayCamino;
 		}
 	}
