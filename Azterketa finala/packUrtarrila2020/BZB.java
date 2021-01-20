@@ -8,7 +8,7 @@ package packUrtarrila2020;
             // Oharra: gogoratu txertaketaren ondorioz zenbait adabegiren numberOfNodes
             // atributua eguneratu beharko dela.
             BinaryTreeNode<Integer> berria = new BinaryTreeNode<>(v);
-            if (root=null){
+            if (root == null){
                 root=berria;
                 root.numberOfNodes= root.numberOfNodes+1;
             }
