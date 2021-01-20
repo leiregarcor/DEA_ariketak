@@ -75,7 +75,10 @@ import java.util.HashMap;
 	      //       Los valores de las variables se han tomado de tHash
 	      //       Si una variable del árbol no se encuentra en la 
 	      //       tabla hash, se asumirá que el valor por defecto es cero
-		return evaluar(root, tHash);
+		if (root==null) return 0;
+		else {
+			return evaluar(root, tHash);
+		}
 	}
 	
 	private Integer evaluar(BinaryTreeNode<InfoElemExp> a, HashMap<String, Integer> tHash) {
